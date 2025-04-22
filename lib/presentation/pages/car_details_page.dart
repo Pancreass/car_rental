@@ -1,10 +1,15 @@
 // Update this import to match the correct case
 import 'package:car_rental/data.models/Car.dart'; // Change from 'car.dart' to 'Car.dart'
 import 'package:car_rental/presentation/widgets/car_card.dart';
+import 'package:car_rental/presentation/widgets/more_card.dart';
 import 'package:flutter/material.dart';
 
 class CarDetalsPage extends StatelessWidget {
-  const CarDetalsPage({super.key});
+ final Car car;
+
+  const CarDetalsPage({super.key, required this.car}); // Add 'required' keyword to 'car' parameter
+
+  // ... rest of your code remains the same
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +29,10 @@ class CarDetalsPage extends StatelessWidget {
         children: [
           CarCard(
             car: Car(
-                model: "Fortuner GR",
-                distance: 870,
-                fuelCapacity: 50,
-                pricePerHour: 45),
+                model:car.model,
+                distance: car.distance,
+                fuelCapacity: car.fuelCapacity,
+                pricePerHour: car.pricePerHour),
           ),
           SizedBox(
             height: 20,
@@ -101,9 +106,39 @@ class CarDetalsPage extends StatelessWidget {
               ],
             ),
           ),
-          
-          ],
-      ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+               MoreCard(
+              car: Car(
+                model:car.model,
+                distance: car.distance,
+                fuelCapacity: car.fuelCapacity,
+                pricePerHour: car.pricePerHour),
+            ), 
+            SizedBox(height: 5,),
+            MoreCard(
+              car:Car(
+                model:car.model,
+                distance: car.distance,
+                fuelCapacity: car.fuelCapacity,
+                pricePerHour: car.pricePerHour),
+            ),
+            SizedBox(height: 5,),
+            MoreCard(
+              car: Car(
+                model:car.model,
+                distance: car.distance,
+                fuelCapacity: car.fuelCapacity,
+                pricePerHour: car.pricePerHour),
+            ),
+            ]
+            ),
+          ),
+        ],
+        ),
+            
     );
   }
 }
