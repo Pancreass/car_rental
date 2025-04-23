@@ -1,11 +1,13 @@
+import 'package:car_rental/data.models/Car.dart';
 import 'package:car_rental/presentation/pages/car_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class Mapsdetailspage extends StatelessWidget {
-  const Mapsdetailspage({super.key});
+  final Car car;
 
+  const Mapsdetailspage({super.key, required this.car});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,7 @@ class Mapsdetailspage extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            child: carDetailsCard(),
+            child: carDetailsCard(car: car),
           )
         ],
       ),
@@ -40,7 +42,7 @@ class Mapsdetailspage extends StatelessWidget {
   }
 }
 
-Widget carDetailsCard() {
+Widget carDetailsCard({required Car car}) {
   return SizedBox(
     height: 350,
     child: Stack(
@@ -68,7 +70,7 @@ Widget carDetailsCard() {
                 height: 20,
               ),
               Text(
-                "car.model",
+                "${car.model}",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -89,7 +91,7 @@ Widget carDetailsCard() {
                     width: 5,
                   ),
                   Text(
-                    ">car.distance km",
+                    "> ${car.distance} km",
                     style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                   SizedBox(
@@ -104,7 +106,7 @@ Widget carDetailsCard() {
                     width: 5,
                   ),
                   Text(
-                    "car.fuelCapacity",
+                    "${car.fuelCapacity.toString()}",
                     style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ],
@@ -132,27 +134,35 @@ Widget carDetailsCard() {
                     "Features",
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
+                  featureIcons(),
                   SizedBox(
                     height: 20,
                   ),
-                  Row(children: [
-                    Text(
-                      "\$car.pricePerHour/day",
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                    ),
-                    ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black),
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(color: Colors.white),
-                        ))
-                  ])
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "\$${car.pricePerHour}/day",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
+                        ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black),
+                            child: Text(
+                              "Book Now",
+                              style: TextStyle(color: Colors.white),
+                            ))
+                      ])
                 ],
               ),
-            ))
+            )),
+        Positioned(
+          top: 50,
+          right: 20,
+          child: Image.asset("assets/white_car.png"),
+        ),
       ],
     ),
   );
@@ -161,7 +171,11 @@ Widget carDetailsCard() {
 Widget featureIcons() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [featureIcon(Icons.local_gas_station, "Diesel", "Common Rail")],
+    children: [
+      featureIcon(Icons.local_gas_station, "Diesel", "Common Rail"),
+      featureIcon(Icons.speed, "Acceleration", "0 - 100 km/s"),
+      featureIcon(Icons.ac_unit, "Cold", "Temp Control"),
+    ],
   );
 }
 

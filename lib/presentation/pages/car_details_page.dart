@@ -1,5 +1,6 @@
 // Update this import to match the correct case
 import 'package:car_rental/data.models/Car.dart'; // Change from 'car.dart' to 'Car.dart'
+import 'package:car_rental/presentation/pages/MapsDetailsPage.dart';
 import 'package:car_rental/presentation/widgets/car_card.dart';
 import 'package:car_rental/presentation/widgets/more_card.dart';
 import 'package:flutter/material.dart';
@@ -85,20 +86,29 @@ class CarDetalsPage extends StatelessWidget {
             ),
             SizedBox(width: 20,),
             Expanded(
-              child: Container(
-                height: 170,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(image: AssetImage("assets/maps.png"),
-                  fit: BoxFit.cover,
+              child: GestureDetector(
+                onTap: () {
+                  //MapsDeatails
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Mapsdetailspage(car: car)),
+                  );
+                },
+                child: Container(
+                  height: 170,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(image: AssetImage("assets/maps.png"),
+                    fit: BoxFit.cover,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                      )
+                    ]
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10,
-                      spreadRadius: 5,
-                    )
-                  ]
                 ),
               ),
             )
