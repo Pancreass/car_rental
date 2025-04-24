@@ -51,7 +51,7 @@ class CarListScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         actions: [
-          GestureDetector(
+          InkWell(
             onTap: () {
               Navigator.push(
                 context,
