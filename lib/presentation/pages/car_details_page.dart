@@ -3,6 +3,7 @@ import 'package:car_rental/data.models/Car.dart'; // Change from 'car.dart' to '
 import 'package:car_rental/presentation/pages/MapsDetailsPage.dart';
 import 'package:car_rental/presentation/widgets/car_card.dart';
 import 'package:car_rental/presentation/widgets/more_card.dart';
+import 'package:car_rental/presentation/widgets/profile_section.dart';
 import 'package:flutter/material.dart';
 
 class CarDetalsPage extends StatefulWidget {
@@ -85,9 +86,19 @@ class _CarDetalsPageState extends State<CarDetalsPage>
                         ]),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 40,
-                          backgroundImage: AssetImage("assets/user.png"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ProfileSection(),
+                              ),
+                            );
+                          },
+                          child: CircleAvatar(
+                            radius: 40,
+                            backgroundImage: AssetImage("assets/user.png"),
+                          ),
                         ),
                         SizedBox(
                           height: 10,

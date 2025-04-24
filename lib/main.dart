@@ -2,6 +2,8 @@ import 'package:car_rental/presentation/pages/MapsDetailsPage.dart';
 import 'package:car_rental/presentation/pages/car_details_page.dart';
 import 'package:car_rental/presentation/pages/car_list_screen.dart';
 import 'package:car_rental/presentation/pages/onboarding_page.dart';
+import 'package:car_rental/presentation/widgets/profile_section.dart';
+// import 'package:car_rental/presentation/widgets/profile_section.dart';
 import 'package:flutter/material.dart';
 
 void main() {
