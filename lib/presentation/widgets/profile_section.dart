@@ -7,17 +7,18 @@ class ProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     signOut() async {
-      try{
+      try {
         await FirebaseAuth.instance.signOut();
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const Decider()),
         );
-      }catch(e){
+      } catch (e) {
         print(e.toString());
         return null;
       }
     }
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -47,11 +48,11 @@ class ProfileSection extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 40.0,
-                  backgroundImage: AssetImage('assets/user.png'),
+                  backgroundImage: AssetImage('assets/Onkar_Sir.jpg'),
                 ),
                 SizedBox(height: 10.0),
                 Text(
-                  'John Doe',
+                  'Onkar Sir',
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
@@ -171,7 +172,7 @@ class ProfileSection extends StatelessWidget {
                 ),
                 SizedBox(height: 10.0),
                 ElevatedButton(
-                  onPressed:(()=>signOut()),
+                  onPressed: (() => signOut()),
                   child: Text('Log Out'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
