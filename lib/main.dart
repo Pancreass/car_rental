@@ -10,11 +10,15 @@ import 'package:car_rental/presentation/widgets/profile_section.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
-  runApp(const MainApp());
+  try{
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+    );  
+    runApp(const MainApp());
+  }catch(e){
+    print(e.toString());
+  }
 }
 
 class MainApp extends StatelessWidget {

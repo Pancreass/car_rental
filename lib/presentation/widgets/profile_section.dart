@@ -1,10 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:car_rental/authentication/wrapper.dart';
 
 class ProfileSection extends StatelessWidget {
   const ProfileSection({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    signOut() async {
+      try{
+        await FirebaseAuth.instance.signOut();
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const Decider()),
+        );
+      }catch(e){
+        print(e.toString());
+        return null;
+      }
+    }
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -158,7 +171,7 @@ class ProfileSection extends StatelessWidget {
                 ),
                 SizedBox(height: 10.0),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed:(()=>signOut()),
                   child: Text('Log Out'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
