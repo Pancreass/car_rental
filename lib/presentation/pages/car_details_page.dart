@@ -87,7 +87,7 @@ class _CarDetalsPageState extends State<CarDetalsPage>
                         ]),
                     child: Column(
                       children: [
-                        GestureDetector(
+                        InkWell(
                           onTap: () {
                             Navigator.push(
                               context,
@@ -122,9 +122,8 @@ class _CarDetalsPageState extends State<CarDetalsPage>
                   width: 20,
                 ),
                 Expanded(
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
-                      //MapsDeatails
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -162,47 +161,140 @@ class _CarDetalsPageState extends State<CarDetalsPage>
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                MoreCard(
-                  car: Car(
-                      model: widget.car.model,
-                      distance: widget.car.distance,
-                      fuelCapacity: widget.car.fuelCapacity,
-                      pricePerHour: widget.car.pricePerHour,
-                      imgURL: widget.car.imgURL), // Add imgURL here
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                MoreCard(
-                  car: Car(
-                      model: widget.car.model,
-                      distance: widget.car.distance,
-                      fuelCapacity: widget.car.fuelCapacity,
-                      pricePerHour: widget.car.pricePerHour,
-                      imgURL: widget.car.imgURL), // Add imgURL here
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                MoreCard(
-                  car: Car(
-                      model: widget.car.model,
-                      distance: widget.car.distance,
-                      fuelCapacity: widget.car.fuelCapacity,
-                      pricePerHour: widget.car.pricePerHour,
-                      imgURL: widget.car.imgURL), // Add imgURL here
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                MoreCard(
-                  car: Car(
-                      model: widget.car.model,
-                      distance: widget.car.distance,
-                      fuelCapacity: widget.car.fuelCapacity,
-                      pricePerHour: widget.car.pricePerHour,
-                      imgURL: widget.car.imgURL), // Add imgURL here
-                ),
+                if (widget.car.model != "Toyota Innova")
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CarDetalsPage(
+                            car: Car(
+                                model: "Toyota Innova",
+                                distance: 920,
+                                fuelCapacity: 45,
+                                pricePerHour: 220,
+                                imgURL: "assets/innova.png"),
+                          ),
+                        ),
+                      );
+                    },
+                    child: MoreCard(
+                      car: Car(
+                          model: "Toyota Innova",
+                          distance: 920,
+                          fuelCapacity: 45,
+                          pricePerHour: 220,
+                          imgURL: "assets/innova.png"),
+                    ),
+                  ),
+                SizedBox(height: 5),
+                if (widget.car.model != "Mahindra Thar")
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CarDetalsPage(
+                            car: Car(
+                                model: "Mahindra Thar",
+                                distance: 750,
+                                fuelCapacity: 57,
+                                pricePerHour: 280,
+                                imgURL: "assets/thar.png"),
+                          ),
+                        ),
+                      );
+                    },
+                    child: MoreCard(
+                      car: Car(
+                          model: "Mahindra Thar",
+                          distance: 750,
+                          fuelCapacity: 57,
+                          pricePerHour: 280,
+                          imgURL: "assets/thar.png"),
+                    ),
+                  ),
+                SizedBox(height: 5),
+                if (widget.car.model != "Maruti Ertiga")
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CarDetalsPage(
+                            car: Car(
+                                model: "Maruti Ertiga",
+                                distance: 680,
+                                fuelCapacity: 45,
+                                pricePerHour: 180,
+                                imgURL: "assets/ertiga.png"),
+                          ),
+                        ),
+                      );
+                    },
+                    child: MoreCard(
+                      car: Car(
+                          model: "Maruti Ertiga",
+                          distance: 680,
+                          fuelCapacity: 45,
+                          pricePerHour: 180,
+                          imgURL: "assets/ertiga.png"),
+                    ),
+                  ),
+                SizedBox(height: 5),
+                if (widget.car.model != "Mahindra XUV700")
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CarDetalsPage(
+                            car: Car(
+                                model: "Mahindra XUV700",
+                                distance: 890,
+                                fuelCapacity: 60,
+                                pricePerHour: 290,
+                                imgURL: "assets/Mahindra.png"),
+                          ),
+                        ),
+                      );
+                    },
+                    child: MoreCard(
+                      car: Car(
+                          model: "Mahindra XUV700",
+                          distance: 890,
+                          fuelCapacity: 60,
+                          pricePerHour: 290,
+                          imgURL: "assets/Mahindra.png"),
+                    ),
+                  ),
+                SizedBox(height: 5),
+                if (widget.car.model != "Toyota Fortuner")
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CarDetalsPage(
+                            car: Car(
+                                model: "Toyota Fortuner",
+                                distance: 870,
+                                fuelCapacity: 50,
+                                pricePerHour: 270,
+                                imgURL: "assets/fortuner.png"),
+                          ),
+                        ),
+                      );
+                    },
+                    child: MoreCard(
+                      car: Car(
+                          model: "Toyota Fortuner",
+                          distance: 870,
+                          fuelCapacity: 50,
+                          pricePerHour: 270,
+                          imgURL: "assets/fortuner.png"),
+                    ),
+                  ),
               ],
             ),
           ),
