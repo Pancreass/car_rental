@@ -55,14 +55,15 @@ class _CarDetalsPageState extends State<CarDetalsPage>
           ],
         ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           CarCard(
             car: Car(
                 model: widget.car.model,
                 distance: widget.car.distance,
                 fuelCapacity: widget.car.fuelCapacity,
-                pricePerHour: widget.car.pricePerHour),
+                pricePerHour: widget.car.pricePerHour,
+                imgURL: widget.car.imgURL),
           ),
           SizedBox(
             height: 20,
@@ -159,35 +160,51 @@ class _CarDetalsPageState extends State<CarDetalsPage>
           ),
           Container(
             padding: EdgeInsets.all(20),
-            child: Column(children: [
-              MoreCard(
-                car: Car(
-                    model: widget.car.model,
-                    distance: widget.car.distance,
-                    fuelCapacity: widget.car.fuelCapacity,
-                    pricePerHour: widget.car.pricePerHour),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              MoreCard(
-                car: Car(
-                    model: widget.car.model,
-                    distance: widget.car.distance,
-                    fuelCapacity: widget.car.fuelCapacity,
-                    pricePerHour: widget.car.pricePerHour),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              MoreCard(
-                car: Car(
-                    model: widget.car.model,
-                    distance: widget.car.distance,
-                    fuelCapacity: widget.car.fuelCapacity,
-                    pricePerHour: widget.car.pricePerHour),
-              ),
-            ]),
+            child: Column(
+              children: [
+                MoreCard(
+                  car: Car(
+                      model: widget.car.model,
+                      distance: widget.car.distance,
+                      fuelCapacity: widget.car.fuelCapacity,
+                      pricePerHour: widget.car.pricePerHour,
+                      imgURL: widget.car.imgURL), // Add imgURL here
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                MoreCard(
+                  car: Car(
+                      model: widget.car.model,
+                      distance: widget.car.distance,
+                      fuelCapacity: widget.car.fuelCapacity,
+                      pricePerHour: widget.car.pricePerHour,
+                      imgURL: widget.car.imgURL), // Add imgURL here
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                MoreCard(
+                  car: Car(
+                      model: widget.car.model,
+                      distance: widget.car.distance,
+                      fuelCapacity: widget.car.fuelCapacity,
+                      pricePerHour: widget.car.pricePerHour,
+                      imgURL: widget.car.imgURL), // Add imgURL here
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                MoreCard(
+                  car: Car(
+                      model: widget.car.model,
+                      distance: widget.car.distance,
+                      fuelCapacity: widget.car.fuelCapacity,
+                      pricePerHour: widget.car.pricePerHour,
+                      imgURL: widget.car.imgURL), // Add imgURL here
+                ),
+              ],
+            ),
           ),
         ],
       ),

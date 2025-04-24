@@ -14,11 +14,9 @@ class OnboardingPage extends StatelessWidget {
             flex: 2,
             child: Container(
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/onboarding.png'),
-                  fit: BoxFit.cover
-                )
-              ),
+                  image: DecorationImage(
+                      image: AssetImage('assets/onboarding.png'),
+                      fit: BoxFit.cover)),
             ),
           ),
           Expanded(
@@ -29,32 +27,39 @@ class OnboardingPage extends StatelessWidget {
                 children: [
                   Text(
                     'Premium cars. \nEnjoy the luxury',
-                    style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     'Premium and prestige car daily rental. \nExperience the thrill at a lower price',
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   SizedBox(
                     width: 320,
                     height: 54,
                     child: ElevatedButton(
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(builder: (context) => CarListScreen())
-                              , (route) => false);
+                              MaterialPageRoute(
+                                  builder: (context) => CarListScreen()),
+                              (route) => false);
                         },
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.black,
-                          backgroundColor: Colors.white
-                        ),
+                            foregroundColor: Colors.black,
+                            backgroundColor: Colors.white),
                         child: Text(
                           'Let\'s Go',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                        )
-                    ),
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        )),
                   )
                 ],
               ),
