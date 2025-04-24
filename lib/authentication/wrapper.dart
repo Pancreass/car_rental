@@ -17,6 +17,7 @@ class _DeciderState extends State<Decider> {
       body: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot){
+          print(snapshot);
             if(snapshot.hasData){
               return const OnboardingPage();
             }else{

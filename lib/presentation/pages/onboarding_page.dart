@@ -1,13 +1,12 @@
-import 'package:car_rental/presentation/pages/car_list_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:car_rental/presentation/pages/car_list_screen.dart';
 
 class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({super.key});
+  const OnboardingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       backgroundColor: Color(0xff2C2B34),
       body: Column(
         children: [
@@ -16,18 +15,18 @@ class OnboardingPage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/onboarding.png"),
-                      fit: BoxFit.contain)),
+                      image: AssetImage('assets/onboarding.png'),
+                      fit: BoxFit.cover)),
             ),
           ),
           Expanded(
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Premium Cars, \n Enjoy the luxury",
+                    'Premium cars. \nEnjoy the luxury',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 32,
@@ -37,7 +36,7 @@ class OnboardingPage extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    "Premium and Prestige car daily rental \n Experience the thrill at a lower prize ",
+                    'Premium and prestige car daily rental. \nExperience the thrill at a lower price',
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                   SizedBox(
@@ -48,18 +47,16 @@ class OnboardingPage extends StatelessWidget {
                     height: 54,
                     child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CarListScreen()),
-                          );
+                          Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) => CarListScreen()),
+                              (route) => false);
                         },
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.black,
-                          backgroundColor: Colors.white,
-                        ),
+                            foregroundColor: Colors.black,
+                            backgroundColor: Colors.white),
                         child: Text(
-                          "Let\'s Go",
+                          'Let\'s Go',
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         )),
