@@ -98,20 +98,20 @@ class _CarDetalsPageState extends State<CarDetalsPage>
                           },
                           child: CircleAvatar(
                             radius: 40,
-                            backgroundImage: AssetImage("assets/user.png"),
+                            backgroundImage: AssetImage("assets/Onkar_Sir.jpg"),
                           ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          "Jane Cooper",
+                          "Onkar Sir",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          "\$4,253",
+                          "\₹4,253",
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],

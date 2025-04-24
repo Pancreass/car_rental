@@ -64,7 +64,8 @@ class CarListScreen extends StatelessWidget {
               padding: const EdgeInsets.only(right: 16.0),
               child: CircleAvatar(
                 radius: 18,
-                backgroundImage: AssetImage('user.png'), // Path to your image
+                backgroundImage:
+                    AssetImage('Onkar_Sir.jpg'), // Path to your image
                 // backgroundColor:
                 //     Colors.transparent, // Optional: make background transparent
               ),
