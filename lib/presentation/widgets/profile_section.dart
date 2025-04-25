@@ -49,6 +49,10 @@ class ProfileSection extends StatelessWidget {
                 CircleAvatar(
                   radius: 40.0,
                   backgroundImage: AssetImage('assets/Onkar_Sir.jpg'),
+                  // Add this fallback if image fails to load
+                  onBackgroundImageError: (_, __) {
+                    Icon(Icons.person, size: 40.0);
+                  },
                 ),
                 SizedBox(height: 10.0),
                 Text(

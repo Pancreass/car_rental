@@ -10,13 +10,13 @@ import 'package:car_rental/presentation/widgets/profile_section.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  try{
+  try {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-    );  
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     runApp(const MainApp());
-  }catch(e){
+  } catch (e) {
     print(e.toString());
   }
 }
@@ -27,8 +27,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // removed const here
-      title: 'Flutter Demo',
+      title: 'WheelsGo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
