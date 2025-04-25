@@ -1,5 +1,5 @@
+import 'package:car_rental/authentication/wrapper.dart';
 import 'package:flutter/material.dart';
-import 'package:car_rental/presentation/pages/car_list_screen.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class OnboardingPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
-                                  builder: (context) => CarListScreen()),
+                                  builder: (context) => Decider()),
                               (route) => false);
                         },
                         style: ElevatedButton.styleFrom(
