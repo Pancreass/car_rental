@@ -118,6 +118,7 @@ class ProfileSection extends StatelessWidget {
                   leading: Icon(Icons.history),
                   title: Text('Rental History'),
                   trailing: Icon(Icons.arrow_forward_ios),
+                  tileColor: Colors.green,
                   onTap: () {},
                 ),
                 ListTile(
